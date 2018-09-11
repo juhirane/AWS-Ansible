@@ -1,0 +1,38 @@
+---
+
+
+#-------------------------------------------------------------------------------
+# Name:        McAfee Virusscan 8 Installation 
+# Purpose:     McAfee Virusscan 8 Installation
+#
+# Author:      Mohd Umar Mubeen
+#
+# Created:     17-05-2018
+# Copyright:   (c) 2018
+# Licence:     <your licence>
+#-------------------------------------------------------------------------------
+# tasks file for McAfeeInstall
+
+    - name: Create a Directory to copy Setup on Remote Server
+      win_file:
+         path: "{{path}}"
+         state: directory
+      tags:
+         - directory_created
+
+    - name: Copy the setup of McAfee VirusScan Enterprise 8.8
+      win_copy:
+         src: "{{src_path}}"
+         dest: "{{dest_path}}"
+      tags:
+         - setupcopied
+
+    - name: install McAfee virus scan
+      win_shell: "{{setup_file_path}}"
+      tags:
+        - McAfeevirus_installed
+
+ #   - name: reboot
+ #     win_reboot: 
+ #     tags:
+ #       - reboot 

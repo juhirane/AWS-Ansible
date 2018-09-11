@@ -1,0 +1,14 @@
+---
+
+
+#-------------------------------------------------------------------------------
+# Name:        McAfee Virusscan 8 Installation 
+# Purpose:     McAfee Virusscan 8 Installation
+# Author:      Mohd Umar Mubeen
+# Created:     17-05-2018
+# Copyright:   ATOS(c) 2018
+#-------------------------------------------------------------------------------
+- hosts: all
+  roles:
+     - McAfeeInstall
+    
